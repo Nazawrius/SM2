@@ -17,9 +17,15 @@ def gen_process(intensity, time):
 
 def plot_processes(processes):
     for (i, events) in enumerate(processes):
-        plt.step(events, range(len(events), label=f"Realization #{i}"))
+        plt.step(events, range(len(events)), label=f"Realization #{i}")
     
     plt.xlabel("Time")
     plt.ylabel("Number of events")
     plt.legend()
+    plt.show()
+
+def plot_num_vs_time(process):
+    plt.bar(range(len(process)), process)
+    plt.xlabel("Event number")
+    plt.ylabel("Time")
     plt.show()
