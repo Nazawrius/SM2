@@ -36,3 +36,9 @@ def plot_diff(process):
     plt.xlabel("Event number")
     plt.ylabel("Event interval")
     plt.show()
+
+def plot_n_events(intensity, time, N):
+    processes = [len(gen_process(intensity, time)) for _ in range(N)]
+    
+    plt.hist(processes, bins=20, rwidth=0.7)
+    plt.show()

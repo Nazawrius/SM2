@@ -1,4 +1,4 @@
-from Poisson import gen_process, plot_processes, plot_num_vs_time, plot_diff
+from Poisson import gen_process, plot_processes, plot_num_vs_time, plot_diff, plot_n_events
 
 def main():
     intensity = 0.4
@@ -13,6 +13,8 @@ def main():
     
     for process in processes:
         plot_diff(process)
+ 
+    plot_n_events(intensity, time, 3000)
 
 if __name__ == "__main__":
     main()
