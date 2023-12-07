@@ -29,3 +29,10 @@ def plot_num_vs_time(process):
     plt.xlabel("Event number")
     plt.ylabel("Time")
     plt.show()
+
+def plot_diff(process):
+    diff = [process[i+1] - process[i] for i in range(len(process) - 1)]
+    plt.bar(range(len(diff)), diff)
+    plt.xlabel("Event number")
+    plt.ylabel("Event interval")
+    plt.show()
