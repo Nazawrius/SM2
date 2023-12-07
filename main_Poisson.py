@@ -1,6 +1,6 @@
 from Poisson import gen_process, plot_processes, plot_num_vs_time, plot_diff, plot_n_events
 
-def main():
+def main_Poisson():
     intensity = 0.4
     time = 300
 
@@ -18,4 +18,4 @@ def main():
     plot_n_events(intensity, time, 3000)
 
 if __name__ == "__main__":
-    main()
+    main_Poisson()
