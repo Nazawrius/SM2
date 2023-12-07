@@ -1,4 +1,4 @@
-from math import log1p
+from math import log1p, exp, factorial
 from random import random
 
 import matplotlib.pyplot as plt
@@ -38,7 +38,10 @@ def plot_diff(process):
     plt.show()
 
 def plot_n_events(intensity, time, N):
-    processes = [len(gen_process(intensity, time)) for _ in range(N)]
+    process_lens = [len(gen_process(intensity, time)) for _ in range(N)]
     
-    plt.hist(processes, bins=20, rwidth=0.7)
+    plt.hist(process_lens, bins=20, rwidth=0.7)
+    x = list(range(min(process_lens), max(process_lens)+1))
+    y = list(map(lambda n: 3 * N * exp(-intensity*time) * (intensity*time)**n / factorial(n), x))
+    plt.plot(x, y)
     plt.show()

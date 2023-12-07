@@ -14,6 +14,7 @@ def main():
     for process in processes:
         plot_diff(process)
  
+    time = 200
     plot_n_events(intensity, time, 3000)
 
 if __name__ == "__main__":
